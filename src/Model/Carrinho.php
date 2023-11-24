@@ -2,6 +2,8 @@
 
 namespace Loja\WebIII\Model;
 
+use Exception;
+
 class Carrinho
 {
     /** @var Produto[] */
@@ -31,7 +33,16 @@ class Carrinho
 
     public function adicionaProduto(Produto $produto)
     {
-        $this->produtos[] = $produto;
+        if($this->getTotalDeProdutos() < 10 && $this->getValorTotalProdutos() < 50000){
+            $this->produtos[] = $produto;
+        } else {
+            throw new Exception(sprintf("Quantidade de produtos ou valor máximo ultrapassados, considere retirar algum produto."));
+        }
+        // try {
+            
+        // } catch (\Throwable $th) {
+            
+        // }
     }
 
     public function removeProduto(Produto $produto)
@@ -75,6 +86,7 @@ class Carrinho
     }
 
     public function calculaValoresProdutos(): void {
+        $this->valorTotalProdutos = 0;
         if($this->getTotalDeProdutos() > 0){
             $this->maiorValor = $this->produtos[0]->getValor();
             $this->menorValor = $this->produtos[0]->getValor();

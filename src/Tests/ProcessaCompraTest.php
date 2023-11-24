@@ -24,26 +24,22 @@ class ProcessaCompraTest extends TestCase{
         $carrinhoUmItem =  new Carrinho($joao);
         $carrinhoUmItem->adicionaProduto(new Produto('Forno Eletrico', 4500));
 
-        $carrinhoOnzeItens =  new Carrinho($pedro);
-        $carrinhoOnzeItens->adicionaProduto(new Produto('Geladeira', 1500));
-        $carrinhoOnzeItens->adicionaProduto(new Produto('Forno Eletrico', 4500));
-        $carrinhoOnzeItens->adicionaProduto(new Produto('Pia', 500));
-        $carrinhoOnzeItens->adicionaProduto(new Produto('Freezer', 2000));
-        $carrinhoOnzeItens->adicionaProduto(new Produto('Cooktop', 600));
-        $carrinhoOnzeItens->adicionaProduto(new Produto('Fogao', 1000));
-        $carrinhoOnzeItens->adicionaProduto(new Produto('Cadeiras Jantar', 500));
-        $carrinhoOnzeItens->adicionaProduto(new Produto('Air Fryer', 200));
-        $produto = new Produto('Mesa Jantar', 500);
-        $carrinhoOnzeItens->adicionaProduto($produto);
-        $carrinhoOnzeItens->removeProduto($produto);
-        $carrinhoOnzeItens->adicionaProduto($produto);
-        $carrinhoOnzeItens->adicionaProduto(new Produto('Talheres', 150));
-        $carrinhoOnzeItens->adicionaProduto(new Produto('Micro-ondas', 700));
+        $carrinhoDezItens =  new Carrinho($pedro);
+        $carrinhoDezItens->adicionaProduto(new Produto('Geladeira', 1500));
+        $carrinhoDezItens->adicionaProduto(new Produto('Forno Eletrico', 4500));
+        $carrinhoDezItens->adicionaProduto(new Produto('Pia', 500));
+        $carrinhoDezItens->adicionaProduto(new Produto('Freezer', 2000));
+        $carrinhoDezItens->adicionaProduto(new Produto('Cooktop', 600));
+        $carrinhoDezItens->adicionaProduto(new Produto('Fogao', 1000));
+        $carrinhoDezItens->adicionaProduto(new Produto('Cadeiras Jantar', 500));
+        $carrinhoDezItens->adicionaProduto(new Produto('Air Fryer', 200));
+        $carrinhoDezItens->adicionaProduto(new Produto('Talheres', 150));
+        $carrinhoDezItens->adicionaProduto(new Produto('Micro-ondas', 700));
 
         return [
             'carrinho vazio' =>  [$carrinhoVazio],
             'carrinho um item' =>  [$carrinhoUmItem],
-            'carrinho onze itens' =>  [$carrinhoOnzeItens],
+            'carrinho dez itens' =>  [$carrinhoDezItens],
         ];
     }
 
@@ -105,37 +101,5 @@ class ProcessaCompraTest extends TestCase{
         $totalEsperado = $carrinho->getMenorValorProduto();
         
         self::assertEquals($totalEsperado, $produtoDeMenorValor);
-    }
-
-    public function testVerificaSe_Os3ProdutosDeMenoresValoresNoCarrinho_EstaoCorretos(){
-        $jose = new Usuario('Jose');
-        $carrinho =  new Carrinho($jose);
-        $carrinho->adicionaProduto(new Produto('Geladeira', 1500)); // 0
-        $carrinho->adicionaProduto(new Produto('Forno Eletrico', 4500)); // 1
-        $carrinho->adicionaProduto(new Produto('Pia', 500)); // 2
-        $carrinho->adicionaProduto(new Produto('Freezer', 2000)); // 3
-        $carrinho->adicionaProduto(new Produto('Cooktop', 600)); // 4
-        $carrinho->adicionaProduto(new Produto('Fogao', 1000)); // 5
-        $carrinho->adicionaProduto(new Produto('Cadeiras Jantar', 500)); // 6
-        $carrinho->adicionaProduto(new Produto('Air Fryer', 200)); // 7
-
-        var_dump($carrinho->getMenores());
-
-        // Act - When
-        $produtosDeMaioresValores = $carrinho->getMaiores();
-        $produtosDeMenoresValores = $carrinho->getMenores();
-        
-        // Assert - Then
-        $totalEsperadoMaiores[] = 1500.0;
-        $totalEsperadoMaiores[] = 2000.0;
-        $totalEsperadoMaiores[] = 4500.0;
-
-        $totalEsperadoMenores[] = 200.0;
-        $totalEsperadoMenores[] = 500.0;
-        $totalEsperadoMenores[] = 600.0;
-        
-        self::assertEquals($totalEsperadoMenores, $produtosDeMenoresValores);
-        self::assertEquals($totalEsperadoMaiores, $produtosDeMaioresValores);
-        
     }
 }

@@ -1,15 +1,19 @@
+Carrinho
+ [x] VerificaSe ARemocaoDeProdutoDoCarrinho EstaCorreta
+ [x] VerificaSe Os3ProdutosDeMenoresValoresNoCarrinho EstaoCorretos
+ [x] VerificaSe AExcessaoDeQuantidadeEValorDeProdutos FoiLancada
+
 Processa Compra
  [x] VerificaSe OValorTotalDaCompraEASomaDosProdutosDoCarrinho SaoIguais with data set "carrinho vazio"
  [x] VerificaSe OValorTotalDaCompraEASomaDosProdutosDoCarrinho SaoIguais with data set "carrinho um item"
- [x] VerificaSe OValorTotalDaCompraEASomaDosProdutosDoCarrinho SaoIguais with data set "carrinho onze itens"
+ [x] VerificaSe OValorTotalDaCompraEASomaDosProdutosDoCarrinho SaoIguais with data set "carrinho dez itens"
  [x] VerificaSe AQuantidadeDeProdutosEmCompraECarrinho SaoIguais with data set "carrinho vazio"
  [x] VerificaSe AQuantidadeDeProdutosEmCompraECarrinho SaoIguais with data set "carrinho um item"
- [x] VerificaSe AQuantidadeDeProdutosEmCompraECarrinho SaoIguais with data set "carrinho onze itens"
+ [x] VerificaSe AQuantidadeDeProdutosEmCompraECarrinho SaoIguais with data set "carrinho dez itens"
  [x] VerificaSe OProdutoDeMaiorValorNoCarrinho EstaCorreto with data set "carrinho vazio"
  [x] VerificaSe OProdutoDeMaiorValorNoCarrinho EstaCorreto with data set "carrinho um item"
- [x] VerificaSe OProdutoDeMaiorValorNoCarrinho EstaCorreto with data set "carrinho onze itens"
+ [x] VerificaSe OProdutoDeMaiorValorNoCarrinho EstaCorreto with data set "carrinho dez itens"
  [x] VerificaSe OProdutoDeMenorValorNoCarrinho EstaCorreto with data set "carrinho vazio"
  [x] VerificaSe OProdutoDeMenorValorNoCarrinho EstaCorreto with data set "carrinho um item"
- [x] VerificaSe OProdutoDeMenorValorNoCarrinho EstaCorreto with data set "carrinho onze itens"
- [ ] VerificaSe Os3ProdutosDeMenoresValoresNoCarrinho EstaoCorretos
+ [x] VerificaSe OProdutoDeMenorValorNoCarrinho EstaCorreto with data set "carrinho dez itens"
 
