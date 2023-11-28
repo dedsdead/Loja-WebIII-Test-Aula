@@ -102,4 +102,28 @@ class ProcessaCompraTest extends TestCase{
         
         self::assertEquals($totalEsperado, $produtoDeMenorValor);
     }
+
+    public function testVerificaSe_AExcessaoDeQuantidadeEValorDeProdutos_FoiLancada(){
+        // Arrange - Given
+        $jose = new Usuario('Jose');
+        $carrinho =  new Carrinho($jose);
+        $carrinho->adicionaProduto(new Produto('Geladeira', 1500)); // 0
+        $carrinho->adicionaProduto(new Produto('Forno Eletrico', 4500)); // 1
+        $carrinho->adicionaProduto(new Produto('Pia', 500)); // 2
+        $carrinho->adicionaProduto(new Produto('Freezer', 2000)); // 3
+        $carrinho->adicionaProduto(new Produto('Freezer', 2000)); // 4
+        $carrinho->adicionaProduto(new Produto('Freezer', 2000)); // 5
+        $carrinho->adicionaProduto(new Produto('Freezer', 2000)); // 6
+        $carrinho->adicionaProduto(new Produto('Cooktop', 600)); // 7
+        $carrinho->adicionaProduto(new Produto('Fogao', 1000)); // 8
+        $carrinho->adicionaProduto(new Produto('Cadeiras Jantar', 500)); // 9
+        // Act - Then
+        $this->expectException(Exception::class);
+        $carrinho->adicionaProduto(new Produto('Air Fryer', 200)); // 10
+        // Act - When
+        $this->compra->finalizaCompra($carrinho);
+        
+        
+    }
+
 }

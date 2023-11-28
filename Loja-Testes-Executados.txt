@@ -1,7 +1,6 @@
 Carrinho
  [x] VerificaSe ARemocaoDeProdutoDoCarrinho EstaCorreta
  [x] VerificaSe Os3ProdutosDeMenoresValoresNoCarrinho EstaoCorretos
- [x] VerificaSe AExcessaoDeQuantidadeEValorDeProdutos FoiLancada
 
 Processa Compra
  [x] VerificaSe OValorTotalDaCompraEASomaDosProdutosDoCarrinho SaoIguais with data set "carrinho vazio"
@@ -16,4 +15,5 @@ Processa Compra
  [x] VerificaSe OProdutoDeMenorValorNoCarrinho EstaCorreto with data set "carrinho vazio"
  [x] VerificaSe OProdutoDeMenorValorNoCarrinho EstaCorreto with data set "carrinho um item"
  [x] VerificaSe OProdutoDeMenorValorNoCarrinho EstaCorreto with data set "carrinho dez itens"
+ [x] VerificaSe AExcessaoDeQuantidadeEValorDeProdutos FoiLancada
 
